@@ -103,8 +103,6 @@ def pep(session):
         table = find_tag(soup, 'dl')
         status_card = table.find(string=re.compile('Status')).find_next('dd')
         if status_card.text not in expected_status_key:
-            print(type(status_card))
-            print(type(expected_status_key[0]))
             logging.info(
                 f'\nНесовподающие статусы:\n{card_pep_link}\n'
                 f'Статус в карточке: {status_card}\n'
